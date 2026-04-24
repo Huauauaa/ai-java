@@ -11,44 +11,11 @@ Multi-module Maven project: shared **syntax** library and **server** Spring Boot
 - **Java:** 17
 - **Spring Boot:** 3.4.x (managed in the root POM)
 
-## Prerequisites
+## Documentation
 
-- JDK 17+
-- [Apache Maven](https://maven.apache.org/) 3.9+
+| Doc | Description |
+| --- | ----------- |
+| [docs/develop.md](docs/develop.md) | Prerequisites, build, tests, run server, layout |
+| [docs/jnl.md](docs/jnl.md) | JNL / JNI native library demo in `syntax` |
 
-## Build
-
-From the repository root:
-
-```bash
-mvn clean package
-```
-
-Build only the server (and its dependency `syntax`):
-
-```bash
-mvn -pl server -am clean package
-```
-
-## Run the server
-
-```bash
-mvn -pl server spring-boot:run
-```
-
-Or run the executable JAR:
-
-```bash
-java -jar server/target/server-1.0.0-SNAPSHOT.jar
-```
-
-Default HTTP port is **8080** unless overridden in `server/src/main/resources/application.properties`.
-
-## Project layout
-
-```
-ai-java/
-├── pom.xml                 # aggregator parent
-├── syntax/                 # library module
-└── server/                 # Spring Boot module
-```
+Quick start: `mvn clean package` and `mvn -pl server spring-boot:run` (see [develop.md](docs/develop.md) for detail).
