@@ -66,11 +66,16 @@ java -jar server/target/server-1.0.0-SNAPSHOT.jar
 
 Default HTTP port is **8080** unless overridden in `server/src/main/resources/application.properties`.
 
+## Javadoc on GitHub Pages
+
+Aggregate HTML Javadoc is built with **`mvn javadoc:aggregate`** (output: `target/reports/apidocs`). CI deploys it with **GitHub Actions**; see **[github-pages-javadoc.md](github-pages-javadoc.md)** for the workflow file, one-time repo settings, and the public URL shape.
+
 ## Project layout
 
 ```
 ai-java/
-├── docs/                   # markdown guides (develop, jnl, perf-stream-collections, …)
+├── .github/workflows/     # CI (e.g. deploy-javadoc.yml)
+├── docs/                   # markdown guides (develop, jnl, perf, GitHub Pages, …)
 ├── pom.xml                 # aggregator parent
 ├── syntax/                 # library module
 └── server/                 # Spring Boot module
@@ -78,4 +83,4 @@ ai-java/
 
 ---
 
-[← README](../README.md) · [JNL usage →](jnl.md) · [Stream list perf →](perf-stream-collections.md)
+[← README](../README.md) · [JNL usage →](jnl.md) · [Stream list perf →](perf-stream-collections.md) · [Javadoc Pages →](github-pages-javadoc.md)
