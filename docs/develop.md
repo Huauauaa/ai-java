@@ -41,11 +41,16 @@ Run a **single test class** or **one method** (Surefire `test` property):
 ```bash
 mvn -pl syntax test -Dtest=HelloWorldTest
 mvn -pl syntax test -Dtest=JniMathTest#incrementDelegatesToNativeCode
+mvn -pl syntax test -Dtest=StreamCollectionPerformanceTest
 ```
 
 ### JNI / JNL tests (`syntax` module)
 
 `JniMathTest` runs only when the native library is present. See **[JNL usage](jnl.md)** for how to build it and call `JniMath` from Java.
+
+### Stream collection performance (informal)
+
+See **[perf-stream-collections.md](perf-stream-collections.md)** for what the test compares, how to run it, and summarized conclusions.
 
 ## Run the server
 
@@ -65,7 +70,7 @@ Default HTTP port is **8080** unless overridden in `server/src/main/resources/ap
 
 ```
 ai-java/
-├── docs/                   # markdown guides (develop, jnl, …)
+├── docs/                   # markdown guides (develop, jnl, perf-stream-collections, …)
 ├── pom.xml                 # aggregator parent
 ├── syntax/                 # library module
 └── server/                 # Spring Boot module
@@ -73,4 +78,4 @@ ai-java/
 
 ---
 
-[← README](../README.md) · [JNL usage →](jnl.md)
+[← README](../README.md) · [JNL usage →](jnl.md) · [Stream list perf →](perf-stream-collections.md)
