@@ -58,6 +58,12 @@ See **[perf-stream-collections.md](perf-stream-collections.md)** for what the te
 mvn -pl server spring-boot:run
 ```
 
+Streaming π (100,000 fractional digits) as chunked plain text, with a short pause between chunks (see `app.pi-stream.chunk-delay-ms` and `app.pi-stream.chunk-size-bytes` in `server/src/main/resources/application.properties`):
+
+```bash
+curl -N http://localhost:8080/api/pi/stream
+```
+
 Or run the executable JAR:
 
 ```bash
